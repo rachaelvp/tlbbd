@@ -1,7 +1,7 @@
-TITLE = "syllabus"
+TITLE = "ph290_tlbbd_syllabus"
 
 .PHONY : all
-all: doc clean
+all: doc clean web
 
 doc:
 	pdflatex $(TITLE).tex
@@ -10,4 +10,8 @@ doc:
 clean:
 	rm -f *.{aux,log,bbl,lof,lot,blg,out}
 	rm -f */*.{aux,log,bbl,lof,lot,blg,out}
+
+web:
+	rsync --chmod=go+r $(TITLE).pdf \
+		nhejazi@arwen.berkeley.edu:/mirror/data/pub/users/nhejazi/teach/2018_$(TITLE).pdf
 
