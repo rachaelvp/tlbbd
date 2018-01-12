@@ -1,4 +1,4 @@
-TITLE = "ph290_tlbbd_syllabus"
+TITLE = "syllabus"
 
 .PHONY : all
 all: doc clean web
@@ -13,5 +13,5 @@ clean:
 
 web:
 	rsync --chmod=go+r $(TITLE).pdf \
-		nhejazi@arwen.berkeley.edu:/mirror/data/pub/users/nhejazi/teach/2018_$(TITLE).pdf
+		nhejazi@arwen.berkeley.edu:/mirror/data/pub/users/nhejazi/teach/2018_ph290_tlbbd/$(TITLE).pdf
 
